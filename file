@@ -1,0 +1,52 @@
+using System;
+
+namespace DayOfWeek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double Budget = double.Parse(Console.ReadLine());
+            string Season = Console.ReadLine();
+            string Destination = "";
+            string Accomudation = "";
+            double Spendings = 0.00;
+            if (Budget <= 100)
+            {
+                Destination = "Bulgaria";
+                if (Season == "summer")
+                {
+                    Accomudation = "Camp";
+                    Spendings = Budget * 0.30;
+                }
+                else if (Season == "winter")
+                {
+                    Accomudation = "Hotel";
+                    Spendings = Budget * 0.70;
+                }
+            }
+            else if (Budget <= 1000)
+            {
+                Destination = "Balkans";
+                if (Season == "summer")
+                {
+                    Accomudation = "Camp";
+                    Spendings = Budget * 0.40;
+                }
+                else if (Season == "winter")
+                {
+                    Accomudation = "Hotel";
+                    Spendings = Budget * 0.80;
+                }
+            }
+            else if (Budget > 1000)
+            {
+                Destination = "Europe";
+                Accomudation = "Hotel";
+                Spendings = Budget * 0.90;
+            }
+            Console.WriteLine($"Somewhere in {Destination}");
+            Console.WriteLine($"{Accomudation} - {Spendings:F2}");
+        }
+    }
+}
